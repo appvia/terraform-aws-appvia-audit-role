@@ -1,4 +1,3 @@
-
 terraform {
   required_version = ">= 1.0.7"
 
@@ -7,6 +6,11 @@ terraform {
     aws = {
       source  = "hashicorp/aws"
       version = ">= 5.0.0"
+    }
+
+    time = {
+      source  = "hashicorp/time"
+      version = ">= 0.12.0"
     }
   }
 }
