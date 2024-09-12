@@ -17,5 +17,5 @@ variable "external_id" {
 variable "expiry_days" {
   type        = number
   default     = 14
-  description = "The number of days the role is avilable before access will be denied"
+  description = "The number of days the role is available before access will be denied"
 }
