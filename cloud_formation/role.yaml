@@ -4,7 +4,7 @@ Parameters:
   AppviaRoleARN:
     Type: String
     Description: Fully-qualified ARN of the remote role
-    Default: arn:aws:iam::536471746696:root
+    Default: arn:aws:iam::730335310409:role/aws-reserved/sso.amazonaws.com/eu-west-2/AWSReservedSSO_WAFSupport_19c9bc61106389c3
   ExternalID:
     Type: String
     Description: External ID shared between consumer and Appvia
