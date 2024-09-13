@@ -1,10 +1,15 @@
 ![Github Actions](../../actions/workflows/terraform.yml/badge.svg)
 
-# Terraform <NAME>
+# Terraform AWS Appvia Audit Role
 
 ## Description
 
-Add a description of the module here
+This module creates a federated AWS IAM role in one or more accounts for the purpose of providing remote audit access
+for Appvia. The module should be deployed from the organization management account or a delegated administrator account.
+
+The role is designed as such that it can only be consumed from a coresponding audit role within Appvia's infrastructure
+and when an agreed external ID is in place. Once the audit is complete, this role should be removed, however it will automatically
+block further access after 7 days.
 
 ## Usage
 
@@ -12,10 +17,17 @@ Add example usage here
 
 ```hcl
 module "example" {
-  source  = "appvia/<NAME>/aws"
-  version = "0.0.1"
+  source  = "appvia/appvia-audit-role/aws"
+  version = "1.0.0"
 
-  # insert variables here
+  external_id = "<random secure id>"
+
+  deployment_account_ids = [
+    "012345678910",
+    "102938475632",
+  ]
+
+  expiry_days = 7
 }
 ```
 
@@ -33,14 +45,14 @@ The `terraform-docs` utility is used to generate this README. Follow the below s
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.7 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 5.0.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 5.58.0 |
 | <a name="requirement_time"></a> [time](#requirement\_time) | >= 0.12.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 5.0.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 5.58.0 |
 | <a name="provider_time"></a> [time](#provider\_time) | >= 0.12.0 |
 
 ## Modules

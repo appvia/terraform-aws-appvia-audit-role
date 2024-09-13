@@ -1,5 +1,16 @@
-#####################################################################################
-# Terraform module examples are meant to show an _example_ on how to use a module
-# per use-case. The code below should not be copied directly but referenced in order
-# to build your own root module that invokes this module
-#####################################################################################
+module "example" {
+  source = "../../"
+
+  # A secure random string to be used as the role's external ID.
+  # This should only be shared between the client and Appvia.
+  external_id = "b03e124b514528288a38cb791de17bde"
+
+  # List of account IDs that the role should be deployed to
+  deployment_account_ids = [
+    "012345678910",
+    "102938475632",
+  ]
+
+  # The number of days after which an account should expire
+  expiry_days = 7
+}
