@@ -12,7 +12,9 @@ No providers.
 
 ## Modules
 
-No modules.
+| Name | Source | Version |
+|------|--------|---------|
+| <a name="module_example"></a> [example](#module\_example) | appvia/appvia-audit-role/aws | 1.0.0 |
 
 ## Resources
 
