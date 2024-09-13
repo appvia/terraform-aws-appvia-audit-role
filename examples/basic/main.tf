@@ -1,6 +1,5 @@
 module "example" {
-  source  = "appvia/appvia-audit-role/aws"
-  version = "1.0.0"
+  source  = "../../"
 
   # A secure random string to be used as the role's external ID.
   # This should only be shared between the client and Appvia.
