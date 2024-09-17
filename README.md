@@ -1,4 +1,4 @@
-![Github Actions](../../actions/workflows/terraform.yml/badge.svg)
+![Github Actions](https://github.com/appvia/terraform-aws-appvia-audit-role/actions/workflows/terraform.yml/badge.svg)
 
 # Terraform AWS Appvia Audit Role
 
