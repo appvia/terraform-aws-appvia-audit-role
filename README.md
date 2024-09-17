@@ -77,6 +77,7 @@ No modules.
 | <a name="input_external_id"></a> [external\_id](#input\_external\_id) | External ID should be a string of cryptographically safe random characters | `string` | n/a | yes |
 | <a name="input_appvia_role_arn"></a> [appvia\_role\_arn](#input\_appvia\_role\_arn) | Allows specifying a non-standard IAM role. Only set this if asked to do so by Appvia | `string` | `"arn:aws:iam::730335310409:role/aws-reserved/sso.amazonaws.com/eu-west-2/AWSReservedSSO_WAFSupport_19c9bc61106389c3"` | no |
 | <a name="input_expiry_days"></a> [expiry\_days](#input\_expiry\_days) | The number of days the role is available before access will be denied | `number` | `14` | no |
+| <a name="input_managed_policy_arns"></a> [managed\_policy\_arns](#input\_managed\_policy\_arns) | List of managed AWS policy ARNs to apply to the role | `list(string)` | <pre>[<br>  "arn:aws:iam::aws:policy/SecurityAudit",<br>  "arn:aws:iam::aws:policy/ReadOnlyAccess"<br>]</pre> | no |
 
 ## Outputs
 
