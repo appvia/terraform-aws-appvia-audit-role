@@ -19,7 +19,7 @@ resource "aws_cloudformation_stack" "management" {
     AppviaRoleARN     = var.appvia_role_arn
     ExternalID        = var.external_id
     ExpiryDate        = time_offset.expiry.rfc3339
-    ManagedPolicyArns = var.managed_policy_arns
+    ManagedPolicyArns = join(",", var.managed_policy_arns)
   }
 
   lifecycle {
@@ -45,7 +45,7 @@ resource "aws_cloudformation_stack_set" "member_accounts" {
     AppviaRoleARN     = var.appvia_role_arn
     ExternalID        = var.external_id
     ExpiryDate        = time_offset.expiry.rfc3339
-    ManagedPolicyArns = var.managed_policy_arns
+    ManagedPolicyArns = join(",", var.managed_policy_arns)
   }
 
   auto_deployment {
