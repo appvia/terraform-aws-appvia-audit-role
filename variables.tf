@@ -19,3 +19,13 @@ variable "expiry_days" {
   default     = 14
   description = "The number of days the role is available before access will be denied"
 }
+
+variable "managed_policy_arns" {
+  type        = list(string)
+  description = "List of managed AWS policy ARNs to apply to the role"
+
+  default = [
+    "arn:aws:iam::aws:policy/SecurityAudit",
+    "arn:aws:iam::aws:policy/ReadOnlyAccess",
+  ]
+}

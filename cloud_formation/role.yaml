@@ -5,6 +5,10 @@ Parameters:
     Type: String
     Description: Fully-qualified ARN of the remote role
     Default: arn:aws:iam::730335310409:role/aws-reserved/sso.amazonaws.com/eu-west-2/AWSReservedSSO_WAFSupport_19c9bc61106389c3
+  ManagedPolicyArns:
+    Type: CommaDelimitedList
+    Description: List of AWS managed policy ARNs to apply to the role
+    Default: 'arn:aws:iam::aws:policy/SecurityAudit, arn:aws:iam::aws:policy/ReadOnlyAccess'
   ExternalID:
     Type: String
     Description: External ID shared between consumer and Appvia
@@ -29,9 +33,7 @@ Resources:
             Condition:
               StringEquals:
                 "sts:ExternalId": !Ref ExternalID
-      ManagedPolicyArns:
-        - arn:aws:iam::aws:policy/SecurityAudit
-        - arn:aws:iam::aws:policy/ReadOnlyAccess
+      ManagedPolicyArns: !Ref ManagedPolicyArns
       Policies:
         - PolicyName: PermissionDeadline
           PolicyDocument:
