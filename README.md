@@ -1,3 +1,11 @@
+<!-- markdownlint-disable -->
+<a href="https://www.appvia.io/"><img src="https://github.com/appvia/terraform-aws-appvia-audit-role/blob/main/appvia_banner.jpg?raw=true" alt="Appvia Banner"/></a><br/><p align="right"> <a href="https://registry.terraform.io/modules/appvia/appvia-audit-role/aws/latest"><img src="https://img.shields.io/static/v1?label=APPVIA&message=Terraform%20Registry&color=191970&style=for-the-badge" alt="Terraform Registry"/></a></a> <a href="https://github.com/appvia/terraform-aws-appvia-audit-role/releases/latest"><img src="https://img.shields.io/github/release/appvia/terraform-aws-appvia-audit-role.svg?style=for-the-badge&color=006400" alt="Latest Release"/></a> <a href="https://appvia-community.slack.com/join/shared_invite/zt-1s7i7xy85-T155drryqU56emm09ojMVA#/shared-invite/email"><img src="https://img.shields.io/badge/Slack-Join%20Community-purple?style=for-the-badge&logo=slack" alt="Slack Community"/></a> <a href="https://github.com/appvia/terraform-aws-appvia-audit-role/graphs/contributors"><img src="https://img.shields.io/github/contributors/appvia/terraform-aws-appvia-audit-role.svg?style=for-the-badge&color=FF8C00" alt="Contributors"/></a>
+
+<!-- markdownlint-restore -->
+<!--
+  ***** CAUTION: DO NOT EDIT ABOVE THIS LINE ******
+-->
+
 ![Github Actions](https://github.com/appvia/terraform-aws-appvia-audit-role/actions/workflows/terraform.yml/badge.svg)
 
 # Terraform AWS Appvia Audit Role
@@ -77,7 +85,7 @@ No modules.
 | <a name="input_external_id"></a> [external\_id](#input\_external\_id) | External ID should be a string of cryptographically safe random characters | `string` | n/a | yes |
 | <a name="input_appvia_role_arn"></a> [appvia\_role\_arn](#input\_appvia\_role\_arn) | Allows specifying a non-standard IAM role. Only set this if asked to do so by Appvia | `string` | `"arn:aws:iam::730335310409:role/aws-reserved/sso.amazonaws.com/eu-west-2/AWSReservedSSO_WAFSupport_19c9bc61106389c3"` | no |
 | <a name="input_expiry_days"></a> [expiry\_days](#input\_expiry\_days) | The number of days the role is available before access will be denied | `number` | `14` | no |
-| <a name="input_managed_policy_arns"></a> [managed\_policy\_arns](#input\_managed\_policy\_arns) | List of managed AWS policy ARNs to apply to the role | `list(string)` | <pre>[<br>  "arn:aws:iam::aws:policy/SecurityAudit",<br>  "arn:aws:iam::aws:policy/ReadOnlyAccess"<br>]</pre> | no |
+| <a name="input_managed_policy_arns"></a> [managed\_policy\_arns](#input\_managed\_policy\_arns) | List of managed AWS policy ARNs to apply to the role | `list(string)` | <pre>[<br/>  "arn:aws:iam::aws:policy/SecurityAudit",<br/>  "arn:aws:iam::aws:policy/ReadOnlyAccess"<br/>]</pre> | no |
 
 ## Outputs
 
